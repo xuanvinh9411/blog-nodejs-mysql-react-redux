@@ -1,0 +1,22 @@
+# react-dashboard
+react-dashboard/node_modules/
+react-dashboard/.env
+react-dashboard/.env.local
+react-dashboard/build/
+react-dashboard/dist/
+react-dashboard/.next/
+react-dashboard/coverage/
+react-dashboard/.DS_Store
+react-dashboard/npm-debug.log*
+react-dashboard/yarn-debug.log*
+react-dashboard/yarn-error.log*
+
+# server_node_mysql
+server_node_mysql/node_modules/
+server_node_mysql/.env
+server_node_mysql/dist/
+server_node_mysql/build/
+server_node_mysql/coverage/
+server_node_mysql/logs/
+server_node_mysql/.DS_Store
+server_node_mysql/npm-debug.log*

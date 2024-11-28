@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: mysql_db
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: mydb123456    # Mật khẩu cho tài khoản root
+      MYSQL_DATABASE: training              # Tên database mặc định
+      MYSQL_USER: admin                      # Tên user mới
+      MYSQL_PASSWORD: admin123456              # Mật khẩu cho user mới
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql                # Lưu trữ dữ liệu
+      - ./mysql-init:/docker-entrypoint-initdb.d # Thư mục chứa scripts khởi tạo (nếu cần)
+    command: 
+      - --default-authentication-plugin=mysql_native_password
+      - --character-set-server=utf8mb4
+      - --collation-server=utf8mb4_unicode_ci
+    networks:
+      - mysql_network
+
+volumes:
+  mysql_data:
+    driver: local
+
+networks:
+  mysql_network:
+    driver: bridge
