@@ -1,0 +1,16 @@
+#!/usr/bin/env sh
+
+# Get the local branch name
+local_branch_name="$(git rev-parse --abbrev-ref HEAD)"
+
+# Regex for validating branch name
+valid_branch_regex='^(manh_master|release|dev|admin|hotfix)_(api|game|admin)_[a-zA-Z0-9]{10,100}_[0-9]{2}[0-9]{2}[0-9]{4}_v[0-9]'
+
+# Define the error message
+branch_message="Error: Branch name '$local_branch_name' does not follow the naming convention."
+
+# Check if the branch name is valid
+# if [[ ! $local_branch_name =~ $valid_branch_regex ]]; then
+#     echo "$branch_message"
+#     exit 1
+# fi

@@ -20,3 +20,5 @@ server_node_mysql/coverage/
 server_node_mysql/logs/
 server_node_mysql/.DS_Store
 server_node_mysql/npm-debug.log*
+
+node_modules
